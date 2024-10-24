@@ -1,3 +1,4 @@
+*This project is still undergoing as part of Master's thesis
 # robo_speech
 - Use of LLM model T5small to classify tasks and extract information from verbal cues
 - This program runs in unison with goal_sender.py in another project for complete interaction and navigation via Unitree Go 1 Edu Robodog

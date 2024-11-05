@@ -43,10 +43,15 @@ class CheckData:
         return data
 
 
-    def spell_check(self, name):
-        # Use Levenshtein distance to find the closest match for a given name
+    def spell_check(self, name, threshold=4):  # Optional threshold parameter
         closest_name = min(self.name_variants_list, key=lambda variant: Levenshtein.distance(name.lower(), variant.lower()))
-        return closest_name
+        min_distance = Levenshtein.distance(name.lower(), closest_name.lower())
+        
+        # Return the closest name only if it meets the threshold criteria
+        if min_distance <= threshold:
+            return closest_name
+        else:
+            return None  # or some other indicator of "no close match"
 
 
     def check_name_in_csv(self, name):

@@ -36,7 +36,7 @@ class SpeechAssistant:
 
 
     def play_sound(self):
-        wave_obj = sa.WaveObject.from_wave_file("/home/robo/robodog/rpi/sound.wav")
+        wave_obj = sa.WaveObject.from_wave_file("sound.wav")
         play_obj = wave_obj.play()
         play_obj.wait_done()
         #pygame.mixer.music.load("/home/robo/robodog/rpi/sound.wav")
@@ -48,7 +48,7 @@ class SpeechAssistant:
         Plays a beep sound to indicate that the assistant is listening.
         """
 
-        wave_obj = sa.WaveObject.from_wave_file("/home/robo/robodog/rpi/beep.wav")
+        wave_obj = sa.WaveObject.from_wave_file("beep.wav")
         play_obj = wave_obj.play()
         play_obj.wait_done()
         #pygame.mixer.music.load("/home/robo/robodog/rpi/beep.wav")  # Load the beep sound (ensure the file exists)
